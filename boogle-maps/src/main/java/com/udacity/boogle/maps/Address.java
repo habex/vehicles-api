@@ -10,6 +10,9 @@ public class Address {
     private String state;
     private String zip;
 
+    private Double lat;
+    private Double lon;
+
     public Address() {
     }
 
@@ -18,6 +21,15 @@ public class Address {
         this.city = city;
         this.state = state;
         this.zip = zip;
+    }
+
+    public Address(String address, String city, String state, String zip, Double lat, Double lon) {
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.lat = lat;
+        this.lon = lon;
     }
 
     public String getAddress() {
@@ -50,5 +62,21 @@ public class Address {
 
     public void setZip(String zip) {
         this.zip = zip;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLon() {
+        return lon;
+    }
+
+    public void setLon(Double lon) {
+        this.lon = lon;
     }
 }
