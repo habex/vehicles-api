@@ -49,6 +49,19 @@ public class Car {
     @Transient
     private String price;
 
+    public Car() {
+    }
+
+    public Car(Long id, LocalDateTime createdAt, LocalDateTime modifiedAt, @NotNull Condition condition, @Valid Details details, @Valid Location location, String price) {
+        this.id = id;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+        this.condition = condition;
+        this.details = details;
+        this.location = location;
+        this.price = price;
+    }
+
     public Long getId() {
         return id;
     }
