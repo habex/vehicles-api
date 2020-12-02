@@ -11,7 +11,6 @@
             <option name="LABEL_INDENT_ABSOLUTE" value="false"/>
             <option name="USE_RELATIVE_INDENTS" value="false"/>
         </value>
-
     </option>
     <option name="INSERT_INNER_CLASS_IMPORTS" value="true"/>
     <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="999"/>
