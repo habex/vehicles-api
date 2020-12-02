@@ -164,6 +164,22 @@ public class CarControllerTest {
         //assertThat(responseEntity.getStatusCode(), equalTo(HttpStatus.OK));
     }
 
+
+    @Test
+    public void updateCar() throws Exception {
+        /**
+         * My TODO : Add a test to check whether a vehicle is appropriately updated when the `put` method is called from the Car Controller.
+         */
+        Car car = getCar();
+        mvc.perform(put(new URI("/cars/1"))
+                .content(json.write(car).getJson())
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .accept(MediaType.APPLICATION_JSON_UTF8)
+        )
+                .andExpect(status().isOk());
+    }
+
+
     /**
      * Creates an example Car object for use in testing.
      *

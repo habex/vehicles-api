@@ -33,9 +33,9 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 @RestController
 @RequestMapping("/cars")
 @ApiResponses(value = {
-        @ApiResponse(code=400, message = "This is a bad request, please follow the API documentation for the proper request format."),
-        @ApiResponse(code=401, message = "Due to security constraints, your access request cannot be authorized. "),
-        @ApiResponse(code=500, message = "The server is down. Please make sure that the Location microservice is running.")
+        @ApiResponse(code = 400, message = "This is a bad request, please follow the API documentation for the proper request format."),
+        @ApiResponse(code = 401, message = "Due to security constraints, your access request cannot be authorized. "),
+        @ApiResponse(code = 500, message = "The server is down. Please make sure that the Location microservice is running.")
 })
 class CarController {
 
@@ -49,9 +49,10 @@ class CarController {
 
     /**
      * Creates a list to store any vehicles.
+     *
      * @return list of vehicles
      */
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping
     Resources<Resource<Car>> list() {
         List<Resource<Car>> resources = carService.list().stream().map(assembler::toResource)
                 .collect(Collectors.toList());
@@ -62,6 +63,7 @@ class CarController {
 
     /**
      * Gets information of a specific car by ID.
+     *
      * @param id the id number of the given vehicle
      * @return all information for the requested vehicle
      */
@@ -80,6 +82,7 @@ class CarController {
 
     /**
      * Posts information to create a new vehicle in the system.
+     *
      * @param car A new vehicle to add to the system.
      * @return response that the new vehicle was added to the system
      * @throws URISyntaxException if the request contains invalid fields or syntax
@@ -92,14 +95,15 @@ class CarController {
          *   Update the first line as part of the above implementing.
          */
 
-        carService.save(car);
+        car = carService.save(car);
         Resource<Car> resource = assembler.toResource(car);
         return ResponseEntity.created(new URI(resource.getId().expand().getHref())).body(resource);
     }
 
     /**
      * Updates the information of a vehicle in the system.
-     * @param id The ID number for which to update vehicle information.
+     *
+     * @param id  The ID number for which to update vehicle information.
      * @param car The updated information about the related vehicle.
      * @return response that the vehicle was updated in the system
      */
@@ -119,6 +123,7 @@ class CarController {
 
     /**
      * Removes a vehicle from the system.
+     *
      * @param id The ID number of the vehicle to remove.
      * @return response that the related vehicle is no longer in the system
      */
