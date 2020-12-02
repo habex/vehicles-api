@@ -1,26 +1,18 @@
 package com.udacity.vehicles.api;
 
 
-import com.udacity.vehicles.domain.Condition;
-import com.udacity.vehicles.domain.Location;
 import com.udacity.vehicles.domain.car.Car;
-import com.udacity.vehicles.domain.car.Details;
 import com.udacity.vehicles.service.CarService;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EnumType;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 

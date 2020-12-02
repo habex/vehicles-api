@@ -1,6 +1,7 @@
-package com.udacity.vehicles.client.maps;
+package com.udacity.orders_sales.client.maps;
 
-import com.udacity.vehicles.domain.Location;
+
+import com.udacity.orders_sales.domain.Location;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

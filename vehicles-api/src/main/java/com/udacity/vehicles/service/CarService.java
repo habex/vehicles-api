@@ -2,18 +2,14 @@ package com.udacity.vehicles.service;
 
 import com.udacity.vehicles.client.maps.MapsClient;
 import com.udacity.vehicles.client.prices.PriceClient;
-import com.udacity.vehicles.domain.Condition;
 import com.udacity.vehicles.domain.Location;
 import com.udacity.vehicles.domain.car.Car;
 import com.udacity.vehicles.domain.car.CarRepository;
-import com.udacity.vehicles.domain.car.Details;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import javax.swing.undo.CannotRedoException;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
